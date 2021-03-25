@@ -16,6 +16,11 @@
 		E94C2D57255A4509001E382F /* WidgetTestExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E94C2D49255A4504001E382F /* WidgetTestExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E950644F2583A60D004B21B0 /* PickerTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E950644E2583A60D004B21B0 /* PickerTestView.swift */; };
 		E952DD5225B2A74900818D31 /* PreferenceKeyTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E952DD5125B2A74900818D31 /* PreferenceKeyTestView.swift */; };
+		E958CB4A25D016CA002EE40F /* DarkModeTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E958CB4925D016CA002EE40F /* DarkModeTestView.swift */; };
+		E958CB5925D24DB3002EE40F /* SignInWithAppleTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E958CB5825D24DB3002EE40F /* SignInWithAppleTestView.swift */; };
+		E958CB5D25D3CE8A002EE40F /* CloudKitTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E958CB5C25D3CE8A002EE40F /* CloudKitTestView.swift */; };
+		E958CB6125D3CEEB002EE40F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E958CB6025D3CEEB002EE40F /* CloudKit.framework */; };
+		E958CB8A25DEBDFA002EE40F /* ShadowTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E958CB8925DEBDFA002EE40F /* ShadowTestView.swift */; };
 		E98A2D8525500044003F6D5C /* SwiftUI2_0TestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98A2D8425500044003F6D5C /* SwiftUI2_0TestApp.swift */; };
 		E98A2D8725500044003F6D5C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98A2D8625500044003F6D5C /* ContentView.swift */; };
 		E98A2D8925500048003F6D5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E98A2D8825500048003F6D5C /* Assets.xcassets */; };
@@ -77,6 +82,13 @@
 		E94C2D54255A4509001E382F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E950644E2583A60D004B21B0 /* PickerTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTestView.swift; sourceTree = "<group>"; };
 		E952DD5125B2A74900818D31 /* PreferenceKeyTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceKeyTestView.swift; sourceTree = "<group>"; };
+		E958CB4925D016CA002EE40F /* DarkModeTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeTestView.swift; sourceTree = "<group>"; };
+		E958CB4D25D017C0002EE40F /* SwiftUI2.0Test.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftUI2.0Test.entitlements; sourceTree = "<group>"; };
+		E958CB4E25D017C0002EE40F /* WidgetTestExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WidgetTestExtension.entitlements; sourceTree = "<group>"; };
+		E958CB5825D24DB3002EE40F /* SignInWithAppleTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleTestView.swift; sourceTree = "<group>"; };
+		E958CB5C25D3CE8A002EE40F /* CloudKitTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitTestView.swift; sourceTree = "<group>"; };
+		E958CB6025D3CEEB002EE40F /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		E958CB8925DEBDFA002EE40F /* ShadowTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowTestView.swift; sourceTree = "<group>"; };
 		E98A2D8125500044003F6D5C /* SwiftUI2.0Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUI2.0Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E98A2D8425500044003F6D5C /* SwiftUI2_0TestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI2_0TestApp.swift; sourceTree = "<group>"; };
 		E98A2D8625500044003F6D5C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -119,6 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E958CB6125D3CEEB002EE40F /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +141,7 @@
 		E94C2D4A255A4504001E382F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E958CB6025D3CEEB002EE40F /* CloudKit.framework */,
 				E94C2D4B255A4504001E382F /* WidgetKit.framework */,
 				E94C2D4D255A4504001E382F /* SwiftUI.framework */,
 			);
@@ -147,6 +161,7 @@
 		E98A2D7825500044003F6D5C = {
 			isa = PBXGroup;
 			children = (
+				E958CB4E25D017C0002EE40F /* WidgetTestExtension.entitlements */,
 				E98A2D8325500044003F6D5C /* SwiftUI2.0Test */,
 				E94C2D4F255A4504001E382F /* WidgetTest */,
 				E94C2D4A255A4504001E382F /* Frameworks */,
@@ -166,6 +181,7 @@
 		E98A2D8325500044003F6D5C /* SwiftUI2.0Test */ = {
 			isa = PBXGroup;
 			children = (
+				E958CB4D25D017C0002EE40F /* SwiftUI2.0Test.entitlements */,
 				E98A2D8425500044003F6D5C /* SwiftUI2_0TestApp.swift */,
 				E98A2D8625500044003F6D5C /* ContentView.swift */,
 				E98A2D8825500048003F6D5C /* Assets.xcassets */,
@@ -195,6 +211,10 @@
 				E943978025A4B0DE0009AB5C /* AnimationTestView.swift */,
 				E943978625A57F600009AB5C /* NavigationTestView.swift */,
 				E952DD5125B2A74900818D31 /* PreferenceKeyTestView.swift */,
+				E958CB4925D016CA002EE40F /* DarkModeTestView.swift */,
+				E958CB5825D24DB3002EE40F /* SignInWithAppleTestView.swift */,
+				E958CB5C25D3CE8A002EE40F /* CloudKitTestView.swift */,
+				E958CB8925DEBDFA002EE40F /* ShadowTestView.swift */,
 			);
 			path = SwiftUI2.0Test;
 			sourceTree = "<group>";
@@ -315,6 +335,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E958CB8A25DEBDFA002EE40F /* ShadowTestView.swift in Sources */,
 				E98A2DC0255154E7003F6D5C /* TextFieldTestView.swift in Sources */,
 				E98A2DBD25513CB1003F6D5C /* SheetTestView.swift in Sources */,
 				E98A2DAD25505F7B003F6D5C /* TabViewTestView.swift in Sources */,
@@ -322,6 +343,7 @@
 				E98A2DB425512A44003F6D5C /* MapTestView.swift in Sources */,
 				E9C9A9222591D38100FFC23F /* FontTestView.swift in Sources */,
 				E98A2DA325500E25003F6D5C /* TextEditorTestView.swift in Sources */,
+				E958CB5D25D3CE8A002EE40F /* CloudKitTestView.swift in Sources */,
 				E98A2D9D25500BC5003F6D5C /* LabelAndLinkTestView.swift in Sources */,
 				E98A2DA025500CCB003F6D5C /* ColorPickerTestView.swift in Sources */,
 				E98A2DB025506221003F6D5C /* LazyVGridTestView.swift in Sources */,
@@ -332,12 +354,14 @@
 				E98A2D98255007A5003F6D5C /* ProgressViewTestView.swift in Sources */,
 				E98A2DC62551616E003F6D5C /* VideoPlayerTestView.swift in Sources */,
 				E98A2DC925516362003F6D5C /* ListChildrenTestView.swift in Sources */,
+				E958CB5925D24DB3002EE40F /* SignInWithAppleTestView.swift in Sources */,
 				E98A2D8525500044003F6D5C /* SwiftUI2_0TestApp.swift in Sources */,
 				E950644F2583A60D004B21B0 /* PickerTestView.swift in Sources */,
 				E952DD5225B2A74900818D31 /* PreferenceKeyTestView.swift in Sources */,
 				E943978125A4B0DE0009AB5C /* AnimationTestView.swift in Sources */,
 				E98A2DC3255157B4003F6D5C /* DisclosureGroupTestView.swift in Sources */,
 				E98A2DD42551A3F9003F6D5C /* MatchedGeometryEffectTestView.swift in Sources */,
+				E958CB4A25D016CA002EE40F /* DarkModeTestView.swift in Sources */,
 				E98A2DCC2551658A003F6D5C /* AppStoreOverlayTestView.swift in Sources */,
 				E98A2D95255004F3003F6D5C /* ScrollViewAndLazyVStackTestView.swift in Sources */,
 				E98A2DAA25505A9C003F6D5C /* OnChangeTestView.swift in Sources */,
@@ -360,6 +384,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = WidgetTestExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8K7XDBXRCN;
 				INFOPLIST_FILE = WidgetTest/Info.plist;
@@ -371,6 +396,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.foolbear.SwiftUI2-0Test.WidgetTest";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -381,6 +407,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = WidgetTestExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8K7XDBXRCN;
 				INFOPLIST_FILE = WidgetTest/Info.plist;
@@ -392,6 +419,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.foolbear.SwiftUI2-0Test.WidgetTest";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -519,6 +547,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SwiftUI2.0Test/SwiftUI2.0Test.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI2.0Test/Preview Content\"";
 				DEVELOPMENT_TEAM = 8K7XDBXRCN;
@@ -531,6 +560,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.foolbear.SwiftUI2-0Test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -542,6 +572,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SwiftUI2.0Test/SwiftUI2.0Test.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI2.0Test/Preview Content\"";
 				DEVELOPMENT_TEAM = 8K7XDBXRCN;
@@ -554,6 +585,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.foolbear.SwiftUI2-0Test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

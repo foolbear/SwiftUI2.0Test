@@ -24,7 +24,9 @@ struct AnimationTestView: View {
     var body: some View {
         VStack {
             Button("Go!") {
-                go.toggle()
+//                withAnimation(.easeInOut(duration: 3.0)) {
+                    go.toggle()
+//                }
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                     rotation.toggle()
                     print("set rotation = \(rotation)")
@@ -36,7 +38,7 @@ struct AnimationTestView: View {
                         .transition(.slide)
                         .environment(\.rotation, rotation)
                 }
-            }.animation(.easeInOut(duration: 3.0), value: go)
+            }//.animation(.easeInOut(duration: 3.0), value: go)
         }.navigationTitle("Animation Test")
     }
 }

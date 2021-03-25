@@ -24,6 +24,18 @@ struct ContentView: View {
                     NavigationLink(destination: NavigationTestView()) {
                         Text("Navigation Test")
                     }
+                    NavigationLink(destination: DarkModeTestView()) {
+                        Text("Dark Mode Test")
+                    }
+                    NavigationLink(destination: SignInWithAppleTestView()) {
+                        Text("Sign In With Apple Test")
+                    }
+                    NavigationLink(destination: CloudKitTestView()) {
+                        Text("CloudKit Test")
+                    }
+                    NavigationLink(destination: ShadowTestView()) {
+                        Text("Shadow Test")
+                    }
                 }
                 Section {
                     NavigationLink(destination: ScrollViewAndLazyVStackTestView()) {
