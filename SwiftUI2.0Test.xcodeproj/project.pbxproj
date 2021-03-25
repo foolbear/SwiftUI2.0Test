@@ -153,6 +153,7 @@
 			children = (
 				E94C2D50255A4504001E382F /* WidgetTest.swift */,
 				E94C2D52255A4509001E382F /* Assets.xcassets */,
+				E958CB4E25D017C0002EE40F /* WidgetTestExtension.entitlements */,
 				E94C2D54255A4509001E382F /* Info.plist */,
 			);
 			path = WidgetTest;
@@ -161,7 +162,6 @@
 		E98A2D7825500044003F6D5C = {
 			isa = PBXGroup;
 			children = (
-				E958CB4E25D017C0002EE40F /* WidgetTestExtension.entitlements */,
 				E98A2D8325500044003F6D5C /* SwiftUI2.0Test */,
 				E94C2D4F255A4504001E382F /* WidgetTest */,
 				E94C2D4A255A4504001E382F /* Frameworks */,
