@@ -21,6 +21,7 @@
 		E958CB5D25D3CE8A002EE40F /* CloudKitTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E958CB5C25D3CE8A002EE40F /* CloudKitTestView.swift */; };
 		E958CB6125D3CEEB002EE40F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E958CB6025D3CEEB002EE40F /* CloudKit.framework */; };
 		E958CB8A25DEBDFA002EE40F /* ShadowTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E958CB8925DEBDFA002EE40F /* ShadowTestView.swift */; };
+		E972A56A2611B47700BC587C /* ViewModelInListTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E972A5692611B47700BC587C /* ViewModelInListTestView.swift */; };
 		E98A2D8525500044003F6D5C /* SwiftUI2_0TestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98A2D8425500044003F6D5C /* SwiftUI2_0TestApp.swift */; };
 		E98A2D8725500044003F6D5C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98A2D8625500044003F6D5C /* ContentView.swift */; };
 		E98A2D8925500048003F6D5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E98A2D8825500048003F6D5C /* Assets.xcassets */; };
@@ -89,6 +90,7 @@
 		E958CB5C25D3CE8A002EE40F /* CloudKitTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitTestView.swift; sourceTree = "<group>"; };
 		E958CB6025D3CEEB002EE40F /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		E958CB8925DEBDFA002EE40F /* ShadowTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowTestView.swift; sourceTree = "<group>"; };
+		E972A5692611B47700BC587C /* ViewModelInListTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelInListTestView.swift; sourceTree = "<group>"; };
 		E98A2D8125500044003F6D5C /* SwiftUI2.0Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUI2.0Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E98A2D8425500044003F6D5C /* SwiftUI2_0TestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI2_0TestApp.swift; sourceTree = "<group>"; };
 		E98A2D8625500044003F6D5C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				E958CB5825D24DB3002EE40F /* SignInWithAppleTestView.swift */,
 				E958CB5C25D3CE8A002EE40F /* CloudKitTestView.swift */,
 				E958CB8925DEBDFA002EE40F /* ShadowTestView.swift */,
+				E972A5692611B47700BC587C /* ViewModelInListTestView.swift */,
 			);
 			path = SwiftUI2.0Test;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				E98A2D98255007A5003F6D5C /* ProgressViewTestView.swift in Sources */,
 				E98A2DC62551616E003F6D5C /* VideoPlayerTestView.swift in Sources */,
 				E98A2DC925516362003F6D5C /* ListChildrenTestView.swift in Sources */,
+				E972A56A2611B47700BC587C /* ViewModelInListTestView.swift in Sources */,
 				E958CB5925D24DB3002EE40F /* SignInWithAppleTestView.swift in Sources */,
 				E98A2D8525500044003F6D5C /* SwiftUI2_0TestApp.swift in Sources */,
 				E950644F2583A60D004B21B0 /* PickerTestView.swift in Sources */,
@@ -384,7 +388,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = WidgetTestExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = WidgetTest/WidgetTestExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8K7XDBXRCN;
 				INFOPLIST_FILE = WidgetTest/Info.plist;
@@ -407,7 +411,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = WidgetTestExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = WidgetTest/WidgetTestExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8K7XDBXRCN;
 				INFOPLIST_FILE = WidgetTest/Info.plist;
