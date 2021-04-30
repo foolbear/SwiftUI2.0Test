@@ -39,6 +39,9 @@ struct ContentView: View {
                     NavigationLink(destination: ViewModelInListTestView()) {
                         Text("ViewModelInList Test")
                     }
+                    NavigationLink(destination: PathTestView()) {
+                        Text("Path Test")
+                    }
                 }
                 Section {
                     NavigationLink(destination: ScrollViewAndLazyVStackTestView()) {
