@@ -19,8 +19,8 @@ func radians(from start: CGPoint, to end: CGPoint) -> Double {
     atan2(Double(end.y - start.y), Double(end.x - start.x))
 }
 
-func degree(fromRadians number: Double) -> Double {
-    number * 180 / .pi
+func degree(fromRadians radians: Double) -> Double {
+    radians * 180 / .pi
 }
 
 func degress(from start: CGPoint, to end: CGPoint) -> Double {
