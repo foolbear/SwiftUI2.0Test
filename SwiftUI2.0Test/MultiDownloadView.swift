@@ -26,7 +26,7 @@ struct MultiDownloadView: View {
     
     func download() {
         viewModel.download()
-        viewModel.test()
+//        viewModel.test()
     }
     
     class ViewModel: ObservableObject {
@@ -36,9 +36,12 @@ struct MultiDownloadView: View {
         func download() {
             // https://leonardo-matos.medium.com/using-combines-mergemany-to-fulfill-your-requests-99e652b89cbf
             // https://stackoverflow.com/a/58708381/12668737
-            downloadsPublisher(for: urls)
+            downloadsPublisher(for: slices)
+                .map {
+                    let images = $0.sorted { $0.0 < $1.0 }.compactMap { $0.1 }
+                    return ViewModel.merge(images: images)
+                }
                 .receive(on: DispatchQueue.main)
-                .map { ViewModel.merge(images: $0) }
                 .compactMap { $0 }
                 .sink { completion in
                     switch completion {
@@ -53,19 +56,18 @@ struct MultiDownloadView: View {
                 .store(in: &subscriptions)
         }
         
-        func downloadsPublisher(for urls: [URL]) -> AnyPublisher<[UIImage], Never> {
-            Publishers.MergeMany(urls.compactMap { downloadPublisher(for: $0) })
-                .compactMap { $0 }
+        func downloadsPublisher(for slices: [Slice]) -> AnyPublisher<[(Int32, UIImage?)], Never> {
+            Publishers.MergeMany(slices.compactMap { downloadPublisher(for: $0) })
                 .collect()
                 .eraseToAnyPublisher()
         }
         
-        func downloadPublisher(for url: URL) -> AnyPublisher<UIImage?, Never> {
-            URLSession.shared.dataTaskPublisher(for: url)
+        func downloadPublisher(for slice: Slice) -> AnyPublisher<(Int32, UIImage?), Never> {
+            URLSession.shared.dataTaskPublisher(for: URL(string: slice.sourceUrl)!)
                 .map(\.data)
                 .map { $0 as Data }
-                .map { UIImage(data: $0) }
-                .replaceError(with: nil)
+                .map { (slice.index, UIImage(data: $0)) }
+                .replaceError(with: (slice.index, nil))
                 .eraseToAnyPublisher()
         }
         
@@ -97,28 +99,28 @@ struct MultiDownloadView: View {
 
             return result
         }
-    }
-    
-    // https://stackoverflow.com/a/59276234/12668737
-    func test() {
-        let myPublishers = [1,2,3]
-            .map{ delayedPublisher($0, delay: 1 / Double($0)).print("\($0)").eraseToAnyPublisher() }
         
-        Publishers.MergeMany(myPublishers)
-            .collect()
-            .sink { result in
-                print("result:", result)
-            }
-            .store(in: &subscriptions)
-    }
-    
-    func delayedPublisher<Value>(_ value: Value, delay after: Double) -> AnyPublisher<Value, Never> {
-        let p = PassthroughSubject<Value, Never>()
-        DispatchQueue.main.asyncAfter(deadline: .now() + after) {
-            p.send(value)
-            p.send(completion: .finished)
+        // https://stackoverflow.com/a/59276234/12668737
+        func test() {
+            let myPublishers = [1,2,3]
+                .map{ delayedPublisher($0, delay: 1 / Double($0)).print("\($0)").eraseToAnyPublisher() }
+            
+            Publishers.MergeMany(myPublishers)
+                .collect()
+                .sink { result in
+                    print("result:", result)
+                }
+                .store(in: &subscriptions)
         }
-        return p.eraseToAnyPublisher()
+        
+        func delayedPublisher<Value>(_ value: Value, delay after: Double) -> AnyPublisher<Value, Never> {
+            let p = PassthroughSubject<Value, Never>()
+            DispatchQueue.main.asyncAfter(deadline: .now() + after) {
+                p.send(value)
+                p.send(completion: .finished)
+            }
+            return p.eraseToAnyPublisher()
+        }
     }
 }
 
@@ -127,18 +129,20 @@ struct Slice: Codable {
     var sourceUrl: String = ""
 }
 
-let urls: [URL] = [
-    URL(string: "https://www.mhnew.xyz//4/788/M6U113O9RBaegFITkpmEGw==.jpg")!,
-    URL(string: "https://www.mhnew.xyz//4/788/rqCoC0TRnQamOuqEBb1A==.jpg")!,
-    URL(string: "https://www.mhnew.xyz//4/788/a8E4s7ASJkuPY4t5krWQoA==.jpg")!,
-    URL(string: "https://www.mhnew.xyz//4/788/I8XxEkDScgKehaR8ZVcwxw==.jpg")!,
-    URL(string: "https://www.mhnew.xyz//4/788/GMxproDwUsgI+Q7D8IHGw==.jpg")!,
-    URL(string: "https://www.mhnew.xyz//4/788/mj1dL6am4xGx6tD4LwC7kQ==.jpg")!,
-    URL(string: "https://www.mhnew.xyz//4/788/TYUt0iY7oV9lBpjSg6Dlg==.jpg")!,
-    URL(string: "https://www.mhnew.xyz//4/788/Fq0eRah+Bb+6apfryusqg==.jpg")!,
-    URL(string: "https://www.mhnew.xyz//4/788/r7q2K0z29Sz+QK0fzyUImQ==.jpg")!,
-    URL(string: "https://www.mhnew.xyz//4/788/kdvOMLEMPAWMdo4xeCfgVg==.jpg")!,
-]
+//https://www.mhnew.xyz/play?linkId=674033&bookId=1390429720578883584&key=iQetfcy/dO0i904cpk/gkw==
+
+//let urls: [URL] = [
+//    URL(string: "https://www.mhnew.xyz//4/788/M6U113O9RBaegFITkpmEGw==.jpg")!,
+//    URL(string: "https://www.mhnew.xyz//4/788/rqCoC0TRnQamOuqEBb1A==.jpg")!,
+//    URL(string: "https://www.mhnew.xyz//4/788/a8E4s7ASJkuPY4t5krWQoA==.jpg")!,
+//    URL(string: "https://www.mhnew.xyz//4/788/I8XxEkDScgKehaR8ZVcwxw==.jpg")!,
+//    URL(string: "https://www.mhnew.xyz//4/788/GMxproDwUsgI+Q7D8IHGw==.jpg")!,
+//    URL(string: "https://www.mhnew.xyz//4/788/mj1dL6am4xGx6tD4LwC7kQ==.jpg")!,
+//    URL(string: "https://www.mhnew.xyz//4/788/TYUt0iY7oV9lBpjSg6Dlg==.jpg")!,
+//    URL(string: "https://www.mhnew.xyz//4/788/Fq0eRah+Bb+6apfryusqg==.jpg")!,
+//    URL(string: "https://www.mhnew.xyz//4/788/r7q2K0z29Sz+QK0fzyUImQ==.jpg")!,
+//    URL(string: "https://www.mhnew.xyz//4/788/kdvOMLEMPAWMdo4xeCfgVg==.jpg")!,
+//]
 
 let slices: [Slice] = [
     Slice(index: 0, sourceUrl: "https://www.mhnew.xyz//4/788/M6U113O9RBaegFITkpmEGw==.jpg"),
@@ -152,57 +156,6 @@ let slices: [Slice] = [
     Slice(index: 8, sourceUrl: "https://www.mhnew.xyz//4/788/r7q2K0z29Sz+QK0fzyUImQ==.jpg"),
     Slice(index: 9, sourceUrl: "https://www.mhnew.xyz//4/788/kdvOMLEMPAWMdo4xeCfgVg==.jpg"),
 ]
-
-
-//"index": 11,
-//            "sourceUrl": "https://www.mhnew.xyz/play?linkId=674033&bookId=1390429720578883584&key=iQetfcy/dO0i904cpk/gkw==",
-//            "name": "第12话 是男人都抗拒不了的诱惑",
-//            "pictures": [
-//                {
-//                    "index": 0,
-//                    "slices": [
-//                        {
-//                            "index": 0,
-//                            "sourceUrl": "https://www.mhnew.xyz//4/788/M6U113O9RBaegFITkpmEGw==.jpg"
-//                        },
-//                        {
-//                            "index": 1,
-//                            "sourceUrl": "https://www.mhnew.xyz//4/788/rqCoC0TRnQamOuqEBb1A==.jpg"
-//                        },
-//                        {
-//                            "index": 2,
-//                            "sourceUrl": "https://www.mhnew.xyz//4/788/a8E4s7ASJkuPY4t5krWQoA==.jpg"
-//                        },
-//                        {
-//                            "index": 3,
-//                            "sourceUrl": "https://www.mhnew.xyz//4/788/I8XxEkDScgKehaR8ZVcwxw==.jpg"
-//                        },
-//                        {
-//                            "index": 4,
-//                            "sourceUrl": "https://www.mhnew.xyz//4/788/GMxproDwUsgI+Q7D8IHGw==.jpg"
-//                        },
-//                        {
-//                            "index": 5,
-//                            "sourceUrl": "https://www.mhnew.xyz//4/788/mj1dL6am4xGx6tD4LwC7kQ==.jpg"
-//                        },
-//                        {
-//                            "index": 6,
-//                            "sourceUrl": "https://www.mhnew.xyz//4/788/TYUt0iY7oV9lBpjSg6Dlg==.jpg"
-//                        },
-//                        {
-//                            "index": 7,
-//                            "sourceUrl": "https://www.mhnew.xyz//4/788/Fq0eRah+Bb+6apfryusqg==.jpg"
-//                        },
-//                        {
-//                            "index": 8,
-//                            "sourceUrl": "https://www.mhnew.xyz//4/788/r7q2K0z29Sz+QK0fzyUImQ==.jpg"
-//                        },
-//                        {
-//                            "index": 9,
-//                            "sourceUrl": "https://www.mhnew.xyz//4/788/kdvOMLEMPAWMdo4xeCfgVg==.jpg"
-//                        }
-//                    ]
-//                }
 
 //struct MultiDownloadView_Previews: PreviewProvider {
 //    static var previews: some View {
