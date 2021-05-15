@@ -12,6 +12,11 @@ struct ContentView: View {
         NavigationView {
             Form {
                 Section {
+                    NavigationLink(destination: MultiDownloadView()) {
+                        Text("MultiDownload Test")
+                    }
+                }
+                Section {
                     NavigationLink(destination: PreferenceKeyTestView()) {
                         Text("PreferenceKey Test")
                     }

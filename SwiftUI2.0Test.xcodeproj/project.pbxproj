@@ -45,6 +45,7 @@
 		E98A2DCC2551658A003F6D5C /* AppStoreOverlayTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98A2DCB2551658A003F6D5C /* AppStoreOverlayTestView.swift */; };
 		E98A2DD125519CF7003F6D5C /* DatePickerTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98A2DD025519CF7003F6D5C /* DatePickerTestView.swift */; };
 		E98A2DD42551A3F9003F6D5C /* MatchedGeometryEffectTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98A2DD32551A3F9003F6D5C /* MatchedGeometryEffectTestView.swift */; };
+		E98D715F264E6FBC00189793 /* MultiDownloadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98D715E264E6FBC00189793 /* MultiDownloadView.swift */; };
 		E9C7A58B2637F8A600D1B2FD /* PathTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C7A58A2637F8A600D1B2FD /* PathTestView.swift */; };
 		E9C9A9222591D38100FFC23F /* FontTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C9A9212591D38100FFC23F /* FontTestView.swift */; };
 /* End PBXBuildFile section */
@@ -117,6 +118,7 @@
 		E98A2DCB2551658A003F6D5C /* AppStoreOverlayTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreOverlayTestView.swift; sourceTree = "<group>"; };
 		E98A2DD025519CF7003F6D5C /* DatePickerTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerTestView.swift; sourceTree = "<group>"; };
 		E98A2DD32551A3F9003F6D5C /* MatchedGeometryEffectTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchedGeometryEffectTestView.swift; sourceTree = "<group>"; };
+		E98D715E264E6FBC00189793 /* MultiDownloadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiDownloadView.swift; sourceTree = "<group>"; };
 		E9C7A58A2637F8A600D1B2FD /* PathTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathTestView.swift; sourceTree = "<group>"; };
 		E9C9A9212591D38100FFC23F /* FontTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontTestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -191,6 +193,7 @@
 				E98A2D8825500048003F6D5C /* Assets.xcassets */,
 				E98A2D8D25500048003F6D5C /* Info.plist */,
 				E98A2D8A25500048003F6D5C /* Preview Content */,
+				E98D715E264E6FBC00189793 /* MultiDownloadView.swift */,
 				E9C7A58A2637F8A600D1B2FD /* PathTestView.swift */,
 				E98A2D94255004F3003F6D5C /* ScrollViewAndLazyVStackTestView.swift */,
 				E98A2D97255007A5003F6D5C /* ProgressViewTestView.swift */,
@@ -365,6 +368,7 @@
 				E9C7A58B2637F8A600D1B2FD /* PathTestView.swift in Sources */,
 				E98A2D8525500044003F6D5C /* SwiftUI2_0TestApp.swift in Sources */,
 				E950644F2583A60D004B21B0 /* PickerTestView.swift in Sources */,
+				E98D715F264E6FBC00189793 /* MultiDownloadView.swift in Sources */,
 				E952DD5225B2A74900818D31 /* PreferenceKeyTestView.swift in Sources */,
 				E943978125A4B0DE0009AB5C /* AnimationTestView.swift in Sources */,
 				E98A2DC3255157B4003F6D5C /* DisclosureGroupTestView.swift in Sources */,
@@ -395,6 +399,7 @@
 				CODE_SIGN_ENTITLEMENTS = WidgetTest/WidgetTestExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8K7XDBXRCN;
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = WidgetTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -419,6 +424,7 @@
 				CODE_SIGN_ENTITLEMENTS = WidgetTest/WidgetTestExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8K7XDBXRCN;
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = WidgetTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -561,6 +567,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI2.0Test/Preview Content\"";
 				DEVELOPMENT_TEAM = 8K7XDBXRCN;
+				ENABLE_BITCODE = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SwiftUI2.0Test/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -587,6 +594,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUI2.0Test/Preview Content\"";
 				DEVELOPMENT_TEAM = 8K7XDBXRCN;
+				ENABLE_BITCODE = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SwiftUI2.0Test/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;

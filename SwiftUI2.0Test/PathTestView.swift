@@ -80,7 +80,7 @@ struct PathTestView: View {
                     Text("Next")
                 })
             }
-        }
+        }.navigationBarTitle("PathTestView")
     }
 }
 
