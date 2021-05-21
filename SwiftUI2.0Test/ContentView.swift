@@ -15,6 +15,9 @@ struct ContentView: View {
                     NavigationLink(destination: MultiDownloadView()) {
                         Text("MultiDownload Test")
                     }
+                    NavigationLink(destination: ImagesTestView()) {
+                        Text("ImagesTestView")
+                    }
                 }
                 Section {
                     NavigationLink(destination: PreferenceKeyTestView()) {

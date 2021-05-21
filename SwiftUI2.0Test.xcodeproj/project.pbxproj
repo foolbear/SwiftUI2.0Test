@@ -48,6 +48,7 @@
 		E98D715F264E6FBC00189793 /* MultiDownloadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98D715E264E6FBC00189793 /* MultiDownloadView.swift */; };
 		E9C7A58B2637F8A600D1B2FD /* PathTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C7A58A2637F8A600D1B2FD /* PathTestView.swift */; };
 		E9C9A9222591D38100FFC23F /* FontTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C9A9212591D38100FFC23F /* FontTestView.swift */; };
+		E9FDC44C26526F1B002F6A10 /* ImagesTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FDC44B26526F1B002F6A10 /* ImagesTestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +122,7 @@
 		E98D715E264E6FBC00189793 /* MultiDownloadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiDownloadView.swift; sourceTree = "<group>"; };
 		E9C7A58A2637F8A600D1B2FD /* PathTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathTestView.swift; sourceTree = "<group>"; };
 		E9C9A9212591D38100FFC23F /* FontTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontTestView.swift; sourceTree = "<group>"; };
+		E9FDC44B26526F1B002F6A10 /* ImagesTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesTestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +195,7 @@
 				E98A2D8825500048003F6D5C /* Assets.xcassets */,
 				E98A2D8D25500048003F6D5C /* Info.plist */,
 				E98A2D8A25500048003F6D5C /* Preview Content */,
+				E9FDC44B26526F1B002F6A10 /* ImagesTestView.swift */,
 				E98D715E264E6FBC00189793 /* MultiDownloadView.swift */,
 				E9C7A58A2637F8A600D1B2FD /* PathTestView.swift */,
 				E98A2D94255004F3003F6D5C /* ScrollViewAndLazyVStackTestView.swift */,
@@ -362,6 +365,7 @@
 				E98A2DBA25513A69003F6D5C /* MenuTestView.swift in Sources */,
 				E98A2D98255007A5003F6D5C /* ProgressViewTestView.swift in Sources */,
 				E98A2DC62551616E003F6D5C /* VideoPlayerTestView.swift in Sources */,
+				E9FDC44C26526F1B002F6A10 /* ImagesTestView.swift in Sources */,
 				E98A2DC925516362003F6D5C /* ListChildrenTestView.swift in Sources */,
 				E972A56A2611B47700BC587C /* ViewModelInListTestView.swift in Sources */,
 				E958CB5925D24DB3002EE40F /* SignInWithAppleTestView.swift in Sources */,

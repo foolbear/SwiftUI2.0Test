@@ -19,7 +19,10 @@ struct MultiDownloadView: View {
                 Image(uiImage: image).resizable().scaledToFit().frame(width: 300, height: 400, alignment: .center)
             }
             Button(action: { download() }, label: {
-                Text("Download")
+                Text("Multi Download")
+            })
+            Button(action: { download0() }, label: {
+                Text("Download, Referer to fix 403")
             })
         }.navigationBarTitle("MultiDownloadView")
     }
@@ -29,9 +32,30 @@ struct MultiDownloadView: View {
 //        viewModel.test()
     }
     
+    func download0() {
+        viewModel.download0()
+    }
+    
     class ViewModel: ObservableObject {
         @Published var image: UIImage? = nil
         private var subscriptions: Set<AnyCancellable> = []
+        
+        func download0() { //test for https://m.mhgui.com/comic/1062/
+            let sourceUrl = "https://i.hamreus.com/ps1/g/GGJT/01/seemh-001-c97c.jpg.webp?e=1622023443&m=jOFaIA5Zr-xac3VxqSWO5w"
+            var request = URLRequest(url: URL(string: sourceUrl)!)
+            request.setValue("https://m.mhgui.com/", forHTTPHeaderField: "Referer")
+            
+            URLSession.shared.dataTaskPublisher(for: request)
+                .map(\.data)
+                .map { $0 as Data }
+                .map { UIImage(data: $0) }
+                .replaceError(with: nil)
+                .receive(on: DispatchQueue.main)
+                .sink { image in
+                    self.image = image
+                }
+                .store(in: &subscriptions)
+        }
         
         func download() {
             // https://leonardo-matos.medium.com/using-combines-mergemany-to-fulfill-your-requests-99e652b89cbf
