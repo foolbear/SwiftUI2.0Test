@@ -13,8 +13,8 @@ struct RotationEnvironmentKey: EnvironmentKey {
 
 extension EnvironmentValues {
     var rotation: Bool {
-        get { return self[RotationEnvironmentKey] }
-        set { self[RotationEnvironmentKey] = newValue }
+        get { self[RotationEnvironmentKey.self] }
+        set { self[RotationEnvironmentKey.self] = newValue }
     }
 }
 
@@ -38,7 +38,7 @@ struct AnimationTestView: View {
                         .transition(.slide)
                         .environment(\.rotation, rotation)
                 }
-            }//.animation(.easeInOut(duration: 3.0), value: go)
+            }.animation(.easeInOut(duration: 3.0), value: go)
         }.navigationTitle("Animation Test")
     }
 }
@@ -58,19 +58,27 @@ struct TextView: View {
     let animation = Animation.linear(duration: 3.0).repeatForever(autoreverses: false)
     
     var body: some View {
-        print("refresh, rotation = \(rotation)"); return
+        let _ = print("refresh, rotation = \(rotation)")
         HStack {
             Spacer()
-            if rotation {
-                Text("R")
-                    .foregroundColor(.blue)
-                    .rotationEffect(.degrees(animationRotating ? 360 : 0))
-                    .animation(animation, value: animationRotating)
-                    .onAppear { animationRotating = true }
-                    .onDisappear { animationRotating = false }
-            } else {
-                Text("S")
-            }
+            //            if rotation {
+            //                Text("R")
+            //                    .foregroundColor(.blue)
+            //                    .rotationEffect(.degrees(animationRotating ? 360 : 0))
+            //                    .animation(animation, value: animationRotating)
+            //                    .onAppear { animationRotating = true }
+            //                    .onDisappear { animationRotating = false }
+            //            } else {
+            //                Text("S")
+            //            }
+            
+            Text(rotation ? "R" : "S")
+                .foregroundColor(rotation ? .blue : .white)
+                .rotationEffect(.degrees(animationRotating ? 360 : 0))
+                .animation(rotation ? animation : nil, value: animationRotating)
+                .onChange(of: rotation) { newValue in
+                    animationRotating = true
+                }
         }
     }
 }
